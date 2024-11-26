@@ -1,15 +1,12 @@
-"use client"
+'use client';
 
-import Todo from "@/components/Todo";
-import { useTheme } from "@/contexts/ThemeContext";
+import { Theme } from '@chakra-ui/react'; // Chakra UI의 useTheme 훅을 import
+import Todo from '@/components/Todo';
 
 export default function Home() {
-
-  const theme = useTheme();
-
-  return (
-    <div className={theme.background}>
-      <Todo />
-    </div>
-  );
+    return (
+        <div className={Theme ? Theme.background : 'default-background'}>
+            <Todo />
+        </div>
+    );
 }
